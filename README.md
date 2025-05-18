@@ -1,3 +1,7 @@
+# LINK DO VÍDEO DE APRESENTAÇÃO ----> https://youtu.be/I8k6io4ri6E
+### GABRIEL TORRES FERNANDES - RM553635
+
+
 # APP-GESTAO-PRODUTOS
 
 Aplicativo móvel para gerenciamento de estoque, desenvolvido em React Native com Expo Router e Context API. Permite cadastrar, listar, editar e excluir produtos, além de escanear códigos de barras usando a câmera do dispositivo.
