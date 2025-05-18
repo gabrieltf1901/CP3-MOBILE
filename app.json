@@ -1,4 +1,55 @@
 {
-  "name": "APP-GESTAO-PRODUTOS",
-  "slug": "APP-GESTAO-PRODUTOS"
+  "expo": {
+    "name": "APP-GESTAO-PRODUTOS",
+    "slug": "app-gestao-produtos",
+    "version": "1.0.0",
+    "sdkVersion": "53.0.9",             
+    "scheme": "appgestaoprodutos",
+    "orientation": "portrait",
+    "icon": "./assets/icone-app.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Este app precisa acessar a câmera para escanear códigos de barras."
+        }
+      ]
+    ],
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.seuusuario.appgestaoprodutos"
+    },
+    "android": {
+      "package": "com.seuusuario.appgestaoprodutos",
+      "icon": "./assets/icone-app.png",
+      "kotlinVersion": "1.7.10",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icone-app.png",
+        "backgroundColor": "#ffffff"
+      },
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/icone-app.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4aac4753-53e1-45b0-9245-69bfc88511a4"
+      }
+    }
+  }
 }

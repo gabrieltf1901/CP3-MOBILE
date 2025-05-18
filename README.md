@@ -1,18 +1,86 @@
-# withRouter [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Do%20you%20wish%20that%20withRouter%20would%20rerender%20your%20component%20when%20your%20route%20changes?%20Now%20it%20can%20with%20the%20with-router%20NPM%20package!&url=https://github.com/CharlesStover/with-router&via=CharlesStover&hashtags=react,reactjs,javascript,webdev,webdeveloper,webdevelopment)
+# APP-GESTAO-PRODUTOS
 
-A pub-sub alternative HOC to `react-router`'s `withRouter` HOC. It functions exactly the same way, except the wrapped component will re-render when the route changes. This is beneficial if your view changes depending on the current path.
+Aplicativo móvel para gerenciamento de estoque, desenvolvido em React Native com Expo Router e Context API. Permite cadastrar, listar, editar e excluir produtos, além de escanear códigos de barras usando a câmera do dispositivo.
 
-[![version](https://img.shields.io/npm/v/with-router.svg)](https://www.npmjs.com/package/with-router)
-[![minified size](https://img.shields.io/bundlephobia/min/with-router.svg)](https://www.npmjs.com/package/with-router)
-[![minzipped size](https://img.shields.io/bundlephobia/minzip/with-router.svg)](https://www.npmjs.com/package/with-router)
-[![downloads](https://img.shields.io/npm/dt/with-router.svg)](https://www.npmjs.com/package/with-router)
-[![build](https://api.travis-ci.com/CharlesStover/with-router.svg)](https://travis-ci.com/CharlesStover/with-router/)
+## Funcionalidades
 
-## Install
+* **Listagem de Produtos**: exibe todos os itens cadastrados.
+* **Cadastro de Produto**:
 
-* `npm install with-router --save` or
-* `yarn add with-router`
+  * Nome
+  * Data de fabricação
+  * Prazo de validade
+  * Quantidade
+  * Lote (letras e números)
+  * Estado de origem (Picker com todas as UFs)
+  * Código de barras (digitável ou escaneável)
+* **Edição de Produto**: modifica todos os campos acima.
+* **Exclusão de Produto**.
+* **Leitura de Código de Barras**: usa expo-camera para escanear e preencher automaticamente o campo.
+* **Tela do Desenvolvedor**: exibe o nome do autor.
 
-## Use
+## Estrutura de Pastas
 
-Use it the same way you would use `react-router`'s built-in `withRouter` HOC!
+```bash
+app/
+├── _layout.js          # Configuração de navegação com Expo Router
+├── index.js            # Tela de listagem
+├── cadastro.js         # Tela de cadastro
+├── editar.js           # Tela de edição
+├── scanner.js          # Rota para o leitor de código de barras
+└── desenvolvedor.js    # Tela com informações do desenvolvedor
+
+contexts/
+├── ProductsContext.js  # Gerencia estado de produtos (CRUD em memória)
+└── BarcodeContext.js   # Guarda valor do último código escaneado
+
+assets/
+├── icone-app.png       # Ícone do aplicativo
+└── splash.png          # Imagem de splash screen
+
+*.json, *.js            # Configurações de Expo, Babel e código-fonte
+```
+
+## Pré-requisitos
+
+* Node.js (versão LTS)
+* npm ou yarn
+* Expo CLI (`npm install -g expo-cli`)
+
+## Instalação e Execução
+
+1. Clone o repositório e navegue até a pasta:
+
+   ```bash
+   git clone https://github.com/SEU_USUARIO/app-gestao-produtos.git
+   cd app-gestao-produtos
+   ```
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npx expo start
+   ```
+
+4. Teste no dispositivo ou emulador:
+
+   * **Dispositivo físico**: abra o app Expo Go e escaneie o QR Code.
+   * **Emulador Android**: pressione **a** no terminal do Metro Bundler.
+   * **Web**: pressione **w** para abrir no navegador.
+
+## Observações
+
+* Não é necessário gerar builds nativos durante o desenvolvimento.
+* Para futura persistência, pode-se integrar AsyncStorage ou banco local.
+
+---
+
+Aproveite e faça ajustes conforme necessário para o seu workflow.
